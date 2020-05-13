@@ -1,1 +1,15 @@
-index.erb
+<h1>List of Pets:</h1>
+<ul>
+    <% @pets.each do |pet| %>
+        <a href="/pets/<%= pet.id %>">
+            <li> <%= pet.name %> </li>
+        </a>
+    <% end %>
+</ul>
+
+<form action="/pets/new" method="post">
+<input type="hidden" name="_method" value="create" />
+
+<input type="submit" value="Create Pet">
+
+</form>

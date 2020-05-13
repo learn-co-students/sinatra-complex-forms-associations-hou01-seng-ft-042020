@@ -1,1 +1,15 @@
-index.erb
+<h1>List of Owners:</h1>
+<ul>
+    <% @owners.each do |owner| %>
+        <a href="/owners/<%= owner.id %>">
+            <li> <%= owner.name %> </li>
+        </a>
+    <% end %>
+</ul>
+
+<form action="/owners/new" method="post">
+<input type="hidden" name="_method" value="create" />
+
+<input type="submit" value="Create Owner" />
+
+</form>
